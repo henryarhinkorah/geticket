@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticketing Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+   
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: #333;
+ 
+  
+  
+ 
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(10px, 2vw, 20px);
+  background-color: #F4F5F6;
+  color: #BA4C9B;
+  width: 100%;
+  position: fixed;
+  
+  
+}
+
+/* Logo styling */
+.logo {
+  font-size: clamp(1rem, 2vw, 2rem);
+  font-weight: bold;
+  flex: 1;
+}
+
+/* Search container: contains both the search bar and button */
+.search-container {
+  display: flex;
+  flex: 2;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Search bar styling */
+.search-bar {
+  width: clamp(150px, 35vw, 350px);
+  padding: clamp(5px, 1vw, 10px);
+  font-size: clamp(0.75rem, 1vw, 1rem);
+  border-radius: 20px;
+  border: 1px solid #BA4C9B;
+  background-color: transparent;
+  color: #BA4C9B;
+}
+
+/* Custom search button next to the search bar */
+.search-btn {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(25px, 3vw, 40px); /* Responsive button width */
+  height: clamp(25px, 3vw, 40px); /* Responsive button height */
+}
+
+.search-btn img {
+  width: 100%; /* Allow the image to fill the button width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 40px; /* Cap the image size for larger screens */
+  max-height: 40px; /* Cap the image height for larger screens */
+  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+.search-btn:hover img {
+  transform: scale(1.2); /* Zoom in the image on hover */
+}
+
+/* Categories styling */
+.categories {
+  display: flex;
+  gap: clamp(10px, 2vw, 30px);
+  flex: 1;
+}
+
+.categories a{
+  position: relative; 
+  color: #BA4C9B;
+  text-decoration: none;
+  font-size: clamp(0.75rem, 1vw, 1rem);
+}
+.categories a::after{
+  content: ' ';
+            height: 3px;
+            width: 0;
+            position: absolute;
+            background: #BA4C9B;
+            left: 0;
+            bottom: -5px;
+            transition: 0.5s;
+}
+.categories a:hover::after {
+  width:100%;
+}
+
+
+
+/* Main content */
+.content {
+  padding: 0px;
+  text-align: center;
+
+}
+.backgroundImage{
+  width: 100vw; /* Allow the image to fill the button width */
+  height: 80vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://media.istockphoto.com/id/513550806/photo/teenager-hipster-friends-partying-by-blowing-colorful-confetti-from-hands.webp?s=1024x1024&w=is&k=20&c=iw8A5c4lQ2pWYw_fbDAAnVSDC3SSGDeDPxE_cO0ifgg=);
+  background-size: cover; /* Ensures the image covers the div */
+  background-position:center;
+  position: relative;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+.overlayContent h1{
+  font-size: clamp(1.5rem, 5vw, 3rem); /* Responsive heading size */
+  margin-bottom: 10px;
+}
+.overlayContent {
+  position: absolute; /* Position it within the parent */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for the centered positioning */
+  color: white; /* Text color */
+  text-align: center; /* Center text */
+  z-index: 1; /* Ensure it is above the background */
+}
+.eventsText{
+  color: black;
+  margin:40px;
+  font-size:clamp(0.75rem, 1vw, 1rem);
+}
+.cardContainer{
+  width:30vw;
+  background-color:white;
+  height: auto;
+  margin: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  position: relative;
+  z-index: -1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+.cardImg{
+  width:inherit;
+  height:60%
+}
+.eventName{
+  font-size: clamp(0.6rem, 2.8vw, 2rem);
+  margin-left: 5%;
+}
+.dateLocation{
+  font-size: clamp(0.6rem, 1vw, 2rem);
+  font-weight: lighter;
+  font-style: italic;
+  margin-left: 5%;
+}
+.getTicketButton{
+  background-color:#BA4C9B;
+  width:90%;
+  height:10%;
+  border: none; 
+  border-radius: 30px;
+  padding: 3%;
+  margin: 5%;
+ font-weight: bold; 
+  margin-top: 5%;
+  color: white;
+  cursor: pointer; 
+  transition: background-color 0.3s ease;
+}
+.getTicketButton:hover {
+  background-color: #792362; /* Darker background color on hover */
+}
+.far.fa-heart{
+  color: white; /* Change the heart color */
+      font-size: 2rem; /* Set the icon size */
+      margin: 10px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer; 
+}
+
+
+    .icon-button:hover {
+      background-color: #9f3e85; /* Darker background on hover */
+    }
+
+
+  </style>
+</head>
+<body>
+    <header class="header">
+      <div class="logo">Geticket</div>
+      <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Search tickets...">
+        <button class="search-btn"> <img src="/images/search icon.png" alt="Search" class="search-icon">
+        </button>
+      </div>
+      <nav class="categories">
+        <a href="#">Sports</a>
+        <a href="#">Music</a>
+        <a href="#">Shows</a>
+        <a href="#">Premieres</a>
+      </nav>
+    </header>
+
+      <div class="backgroundImage">
+        <div class="overlayContent">
+          <h1>Your Front-Row Seat to Unforgettable Moments</h1>  
+        </div>
+      </div>
+
+  <div class="eventsText">
+    <h1>Events near you</h1>
+  </div>
+
+  <div class="cardContainer">
+    <i class="far fa-heart"></i>
+
+    <img src=" https://th.bing.com/th/id/R.4fb253d5bd0d6d8bd9cc5c764e1cc101?rik=y%2fe0tN%2faAiNiyw&pid=ImgRaw&r=0" alt="img" class="cardImg">
+   
+   <div class="eventDetails">
+    <h1 class="eventName">Tidal Rave</h1>
+    <h4 class="dateLocation">Sep 25  •  Labadi beach</h4>
+    <h4 class="dateLocation">Starts from Ghc 250</h4>
+   </div>
+
+   <button class="getTicketButton">Get Ticket</button>
+
+    
+  </div>
+ 
+  </div>
+</body>
+</html>
