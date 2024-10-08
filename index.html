@@ -5,24 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ticketing Website</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMzYoGhV8ZZZPih6/EEH5DVR+0gXc8/0O2kPZs" crossorigin="anonymous">
 
   <style>
    
    * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  
+  box-sizing: border-box; 
 }
 
 body {
   font-family: Arial, sans-serif;
   background-color: white;
-  color: #333;
- 
-  
-  
- 
+  color: #000000;  
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .header {
@@ -34,13 +33,15 @@ body {
   color: #BA4C9B;
   width: 100%;
   position: fixed;
-  
+  transition: background-color 0.3s ease; /* Smooth transition */
+  z-index: 1000; /* Ensure the header stays on top */
+  background-color: rgba(244, 245, 246, 1); /* Solid at the beginning */
   
 }
 
 /* Logo styling */
 .logo {
-  font-size: clamp(1rem, 2vw, 2rem);
+  font-size: clamp(0.7rem, 2vw, 2rem);
   font-weight: bold;
   flex: 1;
 }
@@ -50,14 +51,14 @@ body {
   display: flex;
   flex: 2;
   align-items: center;
-  gap: 10px;
+  
 }
 
 /* Search bar styling */
 .search-bar {
   width: clamp(150px, 35vw, 350px);
   padding: clamp(5px, 1vw, 10px);
-  font-size: clamp(0.75rem, 1vw, 1rem);
+  font-size: clamp(0.7rem, 1vw, 1rem);
   border-radius: 20px;
   border: 1px solid #BA4C9B;
   background-color: transparent;
@@ -75,6 +76,7 @@ body {
   justify-content: center;
   width: clamp(25px, 3vw, 40px); /* Responsive button width */
   height: clamp(25px, 3vw, 40px); /* Responsive button height */
+  margin: 0 5%;
 }
 
 .search-btn img {
@@ -85,9 +87,7 @@ body {
   transition: transform 0.3s ease; /* Smooth transition for zoom effect */
 }
 
-.search-btn:hover img {
-  transform: scale(1.2); /* Zoom in the image on hover */
-}
+
 
 /* Categories styling */
 .categories {
@@ -100,7 +100,7 @@ body {
   position: relative; 
   color: #BA4C9B;
   text-decoration: none;
-  font-size: clamp(0.75rem, 1vw, 1rem);
+  font-size: clamp(0.6rem, 1vw, 1rem);
 }
 .categories a::after{
   content: ' ';
@@ -149,20 +149,22 @@ body {
 }
 .eventsText{
   color: black;
-  margin:40px;
+  margin:5% 0 5% 5%;
   font-size:clamp(0.75rem, 1vw, 1rem);
 }
 .cardContainer{
   width:30vw;
   background-color:white;
   height: auto;
-  margin: 40px;
   border-radius: 20px;
   overflow: hidden;
-  padding-bottom: 20px;
   position: relative;
   z-index: -1;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+  margin-bottom: 10%; 
+ 
+
+
 }
 .cardImg{
   width:inherit;
@@ -185,40 +187,142 @@ body {
   border: none; 
   border-radius: 30px;
   padding: 3%;
-  margin: 5%;
+  margin: 5% 5% 0 5%;
  font-weight: bold; 
-  margin-top: 5%;
   color: white;
   cursor: pointer; 
   transition: background-color 0.3s ease;
+  font-size: clamp(0.85rem, 2vw, 1.5rem);
+ 
+
 }
 .getTicketButton:hover {
   background-color: #792362; /* Darker background color on hover */
 }
 .far.fa-heart{
   color: white; /* Change the heart color */
-      font-size: 2rem; /* Set the icon size */
+      font-size:clamp(0.95rem, 2vw, 2rem); /* Set the icon size */
       margin: 10px;
       position: absolute;
-      right: 10px;
+      right: 3%;
       top: 10px;
       cursor: pointer; 
 }
 
 
     .icon-button:hover {
-      background-color: #9f3e85; /* Darker background on hover */
+      background-color: #6f1357; /* Darker background on hover */
+      
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); /* Responsive grid */
+      margin: 3% 0% 0% 0%; 
+    }
+   
+    .countFlex{
+      flex-direction: row;
+      display: flex;
+    }
+    .heading{
+     left: 5%;
+     top: 0;
+     position: relative;
+    }
+    .countImg{
+      
+      width: 40vw; /* Allow the image to fill the button width */
+      height: 40vw;
+      background-image: url(https://th.bing.com/th/id/OIP.2j3xbjgROdhKPIxWGqZo9QHaKe?rs=1&pid=ImgDetMain);
+      background-size: cover; /* Ensures the image covers the div */
+      background-position:center;
+      margin: 5%;
+      background-repeat: no-repeat;
+      border-radius: 10%;
+     
+    }
+    .countContainer{
+      width:30vw;
+      height: 10vw;
+      background-color: #F4F5F6;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      border-radius: 20px;
+      font-size:clamp(0.95rem, 2vw, 2rem) ;
+      font-weight: bold;
+     margin: 20% 0 0 10%;
+     
+    }
+    .footer{
+      width: 100%;
+      height:auto;
+      background-color: #F4F5F6;
+      padding: 2% 5% 2% 5%;
+      
+      
+    }
+    .headings{
+      color: #BA4C9B;  
+      font-size:clamp(0.95rem, 2vw, 2rem); 
+     
+    }
+    .paragraph{
+      margin-top: 1%;
+      font-size:clamp(0.7rem, 1.5vw, 1.8rem);  
+      
+    }
+    .socialMedia{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 5% 0 0 0;
+      
     }
 
+    .social-icons {
+    display: flex; /* Align icons in a row */
+    gap: 15%; /* Space between icons */
+}
+
+.social-icons i {
+  font-size:clamp(1.5rem, 2vw, 2.2rem) ; /* Size of the icons */
+    color: black; /* Default color */
+    transition: color 0.3s; /* Transition effect */
+}
+
+.social-icons a:hover i {
+    color: #b94999; /* Color on hover (you can change this to your preference) */
+}
+
+
+  
+    
+
+    
 
   </style>
+  <script>
+    // Listen for scroll events on the window
+    window.addEventListener('scroll', function() {
+      // Get the header element
+      const header = document.querySelector('.header');
+  
+      // Check if the user has scrolled more than 50px
+      if (window.scrollY > 50) {
+        header.style.backgroundColor = 'rgba(244, 245, 246, 0.8)'; // Transparent background
+      } else {
+        header.style.backgroundColor = 'rgba(244, 245, 246, 1)'; // Solid background when at the top
+      }
+    });
+  </script>
 </head>
 <body>
     <header class="header">
       <div class="logo">Geticket</div>
       <div class="search-container">
         <input type="text" class="search-bar" placeholder="Search tickets...">
-        <button class="search-btn"> <img src="/images/search icon.png" alt="Search" class="search-icon">
+        <button class="search-btn"> <img src="/geticket/images/search icon.png" alt="Search" class="search-icon">
         </button>
       </div>
       <nav class="categories">
@@ -237,24 +341,115 @@ body {
 
   <div class="eventsText">
     <h1>Events near you</h1>
+    <div class="card-grid" id="cardGrid">
+      <!-- Cards will be dynamically inserted here -->
+    </div>
   </div>
 
-  <div class="cardContainer">
-    <i class="far fa-heart"></i>
-
-    <img src=" https://th.bing.com/th/id/R.4fb253d5bd0d6d8bd9cc5c764e1cc101?rik=y%2fe0tN%2faAiNiyw&pid=ImgRaw&r=0" alt="img" class="cardImg">
-   
-   <div class="eventDetails">
-    <h1 class="eventName">Tidal Rave</h1>
-    <h4 class="dateLocation">Sep 25  •  Labadi beach</h4>
-    <h4 class="dateLocation">Starts from Ghc 250</h4>
-   </div>
-
-   <button class="getTicketButton">Get Ticket</button>
-
-    
-  </div>
  
+
+  <script defer>
+    
+    // Sample data for events
+    const events = [
+      {
+        imageSrc: "https://th.bing.com/th/id/R.4fb253d5bd0d6d8bd9cc5c764e1cc101?rik=y%2fe0tN%2faAiNiyw&pid=ImgRaw&r=0",
+        eventName: "Tidal Rave",
+        dateLocation: "Sep 25 • Labadi beach",
+        ticketPrice: "Ghc 250"
+      },
+      {
+        imageSrc: "https://th.bing.com/th/id/OIP.LBrTBbcnl9iexF1ONoEifQHaHP?rs=1&pid=ImgDetMain",
+        eventName: "Afrochella",
+        dateLocation: "Oct 5 • Independence Square",
+        ticketPrice: "Ghc 150"
+      },
+      { 
+      imageSrc: "https://www.graphic.com.gh/images/2023/april/03/blackstars.jpeg",
+        eventName: "Black Stars v USA",
+        dateLocation: "Jan 5 • Baba Yara Stadium",
+        ticketPrice: "Ghc 50"
+      },
+      {
+      imageSrc: "https://th.bing.com/th/id/OIP.RuQM3FZI56uz4L2n_y5JfAHaJQ?rs=1&pid=ImgDetMain",
+        eventName: "Detty Rave",
+        dateLocation: "Jul 9 • Ridge Condos",
+        ticketPrice: "Ghc 350"
+      },
+      {
+      imageSrc: "https://th.bing.com/th/id/R.913e594e1f3b85fa86fa2293375eb6be?rik=Nk%2fgCDnlonD02w&pid=ImgRaw&r=0",
+        eventName: "Deadpool Premiere",
+        dateLocation: "Jul 19 • Silverbird Cinema",
+        ticketPrice: "Ghc 150"
+      },
+    ];
+
+ function createCard(imageSrc, eventName, dateLocation, ticketPrice) {
+      return `
+        <div class="cardContainer">
+          <i class="far fa-heart"></i>
+          <img src="${imageSrc} " alt="img" class="cardImg">        
+        <div class="eventDetails">
+          <h1 class="eventName">${eventName}</h1>
+          <h4 class="dateLocation">${dateLocation}</h4>
+          <h4 class="dateLocation">Starts from ${ticketPrice}</h4>
+        </div>
+        <button class="getTicketButton">Get Ticket</button>
   </div>
-</body>
+  `;
+    }
+      // Get the card grid element
+      const cardGrid = document.getElementById('cardGrid');
+
+// Generate cards from events data
+events.forEach(event => {
+  const cardHTML = createCard(event.imageSrc, event.eventName, event.dateLocation, event.ticketPrice);
+  cardGrid.innerHTML += cardHTML; // Append card HTML to the grid
+});
+</script>
+    
+ <div class="countdownContainer">
+    <h1 class="heading">Time left until early bird tickets run out</h1>
+   <div class="countFlex">
+    <div class="countImg"></div>
+    <div class="countContainer">00h : 00m : 00s</div>
+   </div>  
+   
+ </div>
+
+ <div class="footer">
+  <h2 class="headings">About Geticket</h2>
+  <p class="paragraph">
+    Geticket is your go-to platform for buying tickets to the hottest events, from concerts and parties to 
+    sports matches and live shows. 
+    With a simple, user-friendly interface, we make it easy for you to discover and secure tickets for the 
+    events you love. Whether you're looking for entertainment, excitement, or unforgettable experiences, 
+    Geticket has you covered
+  </p>
+  
+  <div class="socialMedia">
+    
+      <div class="social-icons">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook-square"></i>
+          </a>
+          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter"></i>
+        </a>
+        
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram"></i>
+          </a>
+     </div>    
+    </div>  
+
+ </div>
+  
+   
+
+
+
+
+</div>  
+  </body>
 </html>
