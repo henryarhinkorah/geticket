@@ -15,13 +15,14 @@
   box-sizing: border-box; 
   justify-content: center;
   align-items: center;
+  
+ 
 }
 
 body {
   font-family: Arial, sans-serif;
   background-color: white;
   color: #000000;  
-  overflow-x: hidden; 
   padding: 0;
   margin: 0;
   flex-direction: column;
@@ -79,21 +80,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(25px, 3vw, 100px); /* Responsive button width */
-  height: clamp(25px, 3vw, 100px); /* Responsive button height */
-  margin: 0 5%;
+  width: clamp(30px, 3vw, 100px); /* Responsive button width */
+  height: clamp(30px, 3vw, 100px); /* Responsive button height */
+
 }
-
-.search-btn img {
-  width: 100%; /* Allow the image to fill the button width */
-  height: auto; /* Maintain aspect ratio */
-  max-width: 40px; /* Cap the image size for larger screens */
-  max-height: 40px; /* Cap the image height for larger screens */
-  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+.search-icon {
+  color: #BA4C9B;
+  font-size: clamp(0.6rem, 1vw, 1rem);;
 }
-
-
-
 /* Categories styling */
 .categories {
   display: flex;
@@ -129,9 +123,13 @@ body {
   text-align: center;
 
 }
+.bodyy{
+  width: 100vw; 
+  overflow: hidden;
+}
 .backgroundImage{
   width: 100vw; /* Allow the image to fill the button width */
-  height: 50vw;
+  height: 45vw;
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://media.istockphoto.com/id/513550806/photo/teenager-hipster-friends-partying-by-blowing-colorful-confetti-from-hands.webp?s=1024x1024&w=is&k=20&c=iw8A5c4lQ2pWYw_fbDAAnVSDC3SSGDeDPxE_cO0ifgg=);
   background-size: cover; /* Ensures the image covers the div */
   background-position:center;
@@ -154,7 +152,7 @@ body {
 }
 .eventsText{
   color: black;
-  margin:15% 0 5% 0;
+  margin:5% 0 5% 0;
   font-size:clamp(0.75rem, 1vw, 1rem);
 }
 .cardContainer{
@@ -167,9 +165,6 @@ body {
   z-index: -1;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow effect */
   margin-bottom: 0%; 
- 
-
-
 }
 .cardImg{
   width:inherit;
@@ -251,7 +246,7 @@ body {
     }
     .countContainer{
       width:clamp(10%, 50%, 100%);
-      height:clamp(10%, 50%, 100%);
+      height:clamp(20vh, 70px, 40vh);
       background-color: #F4F5F6;
       align-items: center;
       justify-content: center;
@@ -259,7 +254,7 @@ body {
       border-radius: 20px;
       font-size:clamp(0.95rem, 2vw, 2rem) ;
       font-weight: bold;
-     margin: 20% 0 0 10%;
+     margin: 0% 0 0 10%;
      
     }
     .countdownContainer{
@@ -334,7 +329,8 @@ body {
       <div class="logo">Geticket</div>
       <div class="search-container">
         <input type="text" class="search-bar" placeholder="Search tickets...">
-        <button class="search-btn"> <img src="/geticket/images/search icon.png" alt="Search" class="search-icon">
+        <button class="search-btn">
+          <i class="fas fa-search search-icon"></i>
         </button>
       </div>
       <nav class="categories">
@@ -345,119 +341,120 @@ body {
       </nav>
     </header>
 
-      <div class="backgroundImage">
-        <div class="overlayContent">
-          <h1>Your Front-Row Seat to Unforgettable Moments</h1>  
+    <div class="bodyy">
+            <div class="backgroundImage">
+              <div class="overlayContent">
+                <h1>Your Front-Row Seat to Unforgettable Moments</h1>  
+              </div>
+            </div>
+
+        <div class="eventsText">
+          <h1>Events near you</h1>
+          <div class="card-grid" id="cardGrid">
+            <!-- Cards will be dynamically inserted here -->
+          </div>
         </div>
+
+      
+
+        <script defer>
+          
+          // Sample data for events
+          const events = [
+            {
+              imageSrc: "https://th.bing.com/th/id/R.4fb253d5bd0d6d8bd9cc5c764e1cc101?rik=y%2fe0tN%2faAiNiyw&pid=ImgRaw&r=0",
+              eventName: "Tidal Rave",
+              dateLocation: "Sep 25 • Labadi beach",
+              ticketPrice: "Ghc 250"
+            },
+            {
+              imageSrc: "https://th.bing.com/th/id/OIP.LBrTBbcnl9iexF1ONoEifQHaHP?rs=1&pid=ImgDetMain",
+              eventName: "Afrochella",
+              dateLocation: "Oct 5 • Independence Square",
+              ticketPrice: "Ghc 150"
+            },
+            { 
+            imageSrc: "https://www.graphic.com.gh/images/2023/april/03/blackstars.jpeg",
+              eventName: "Black Stars v USA",
+              dateLocation: "Jan 5 • Baba Yara Stadium",
+              ticketPrice: "Ghc 50"
+            },
+            {
+            imageSrc: "https://th.bing.com/th/id/OIP.RuQM3FZI56uz4L2n_y5JfAHaJQ?rs=1&pid=ImgDetMain",
+              eventName: "Detty Rave",
+              dateLocation: "Jul 9 • Ridge Condos",
+              ticketPrice: "Ghc 350"
+            },
+            {
+            imageSrc: "https://th.bing.com/th/id/R.913e594e1f3b85fa86fa2293375eb6be?rik=Nk%2fgCDnlonD02w&pid=ImgRaw&r=0",
+              eventName: "Deadpool Premiere",
+              dateLocation: "Jul 19 • Silverbird Cinema",
+              ticketPrice: "Ghc 150"
+            },
+          ];
+
+      function createCard(imageSrc, eventName, dateLocation, ticketPrice) {
+            return `
+              <div class="cardContainer">
+                <i class="far fa-heart"></i>
+                <img src="${imageSrc} " alt="img" class="cardImg">        
+              <div class="eventDetails">
+                <h1 class="eventName">${eventName}</h1>
+                <h4 class="dateLocation">${dateLocation}</h4>
+                <h4 class="dateLocation">Starts from ${ticketPrice}</h4>
+              </div>
+              <button class="getTicketButton">Get Ticket</button>
+        </div>
+        `;
+          }
+            // Get the card grid element
+            const cardGrid = document.getElementById('cardGrid');
+
+      // Generate cards from events data
+      events.forEach(event => {
+        const cardHTML = createCard(event.imageSrc, event.eventName, event.dateLocation, event.ticketPrice);
+        cardGrid.innerHTML += cardHTML; // Append card HTML to the grid
+      });
+      </script>
+          
+      <div class="countdownContainer">
+          <h1 class="heading">Time left until early bird tickets run out</h1>
+        <div class="countFlex">
+          <div class="countImg"></div>
+          <div class="countContainer">00h : 00m : 00s</div>
+        </div>  
+        
       </div>
 
-  <div class="eventsText">
-    <h1>Events near you</h1>
-    <div class="card-grid" id="cardGrid">
-      <!-- Cards will be dynamically inserted here -->
-    </div>
-  </div>
-
- 
-
-  <script defer>
-    
-    // Sample data for events
-    const events = [
-      {
-        imageSrc: "https://th.bing.com/th/id/R.4fb253d5bd0d6d8bd9cc5c764e1cc101?rik=y%2fe0tN%2faAiNiyw&pid=ImgRaw&r=0",
-        eventName: "Tidal Rave",
-        dateLocation: "Sep 25 • Labadi beach",
-        ticketPrice: "Ghc 250"
-      },
-      {
-        imageSrc: "https://th.bing.com/th/id/OIP.LBrTBbcnl9iexF1ONoEifQHaHP?rs=1&pid=ImgDetMain",
-        eventName: "Afrochella",
-        dateLocation: "Oct 5 • Independence Square",
-        ticketPrice: "Ghc 150"
-      },
-      { 
-      imageSrc: "https://www.graphic.com.gh/images/2023/april/03/blackstars.jpeg",
-        eventName: "Black Stars v USA",
-        dateLocation: "Jan 5 • Baba Yara Stadium",
-        ticketPrice: "Ghc 50"
-      },
-      {
-      imageSrc: "https://th.bing.com/th/id/OIP.RuQM3FZI56uz4L2n_y5JfAHaJQ?rs=1&pid=ImgDetMain",
-        eventName: "Detty Rave",
-        dateLocation: "Jul 9 • Ridge Condos",
-        ticketPrice: "Ghc 350"
-      },
-      {
-      imageSrc: "https://th.bing.com/th/id/R.913e594e1f3b85fa86fa2293375eb6be?rik=Nk%2fgCDnlonD02w&pid=ImgRaw&r=0",
-        eventName: "Deadpool Premiere",
-        dateLocation: "Jul 19 • Silverbird Cinema",
-        ticketPrice: "Ghc 150"
-      },
-    ];
-
- function createCard(imageSrc, eventName, dateLocation, ticketPrice) {
-      return `
-        <div class="cardContainer">
-          <i class="far fa-heart"></i>
-          <img src="${imageSrc} " alt="img" class="cardImg">        
-        <div class="eventDetails">
-          <h1 class="eventName">${eventName}</h1>
-          <h4 class="dateLocation">${dateLocation}</h4>
-          <h4 class="dateLocation">Starts from ${ticketPrice}</h4>
-        </div>
-        <button class="getTicketButton">Get Ticket</button>
-  </div>
-  `;
-    }
-      // Get the card grid element
-      const cardGrid = document.getElementById('cardGrid');
-
-// Generate cards from events data
-events.forEach(event => {
-  const cardHTML = createCard(event.imageSrc, event.eventName, event.dateLocation, event.ticketPrice);
-  cardGrid.innerHTML += cardHTML; // Append card HTML to the grid
-});
-</script>
-    
- <div class="countdownContainer">
-    <h1 class="heading">Time left until early bird tickets run out</h1>
-   <div class="countFlex">
-    <div class="countImg"></div>
-    <div class="countContainer">00h : 00m : 00s</div>
-   </div>  
-   
- </div>
-
- <div class="footer">
-  <h2 class="headings">About Geticket</h2>
-  <p class="paragraph">
-    Geticket is your go-to platform for buying tickets to the hottest events, from concerts and parties to 
-    sports matches and live shows. 
-    With a simple, user-friendly interface, we make it easy for you to discover and secure tickets for the 
-    events you love. Whether you're looking for entertainment, excitement, or unforgettable experiences, 
-    Geticket has you covered
-  </p>
-  
-  <div class="socialMedia">
-    
-      <div class="social-icons">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-facebook-square"></i>
-          </a>
-          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-twitter"></i>
-        </a>
+      <div class="footer">
+        <h2 class="headings">About Geticket</h2>
+        <p class="paragraph">
+          Geticket is your go-to platform for buying tickets to the hottest events, from concerts and parties to 
+          sports matches and live shows. 
+          With a simple, user-friendly interface, we make it easy for you to discover and secure tickets for the 
+          events you love. Whether you're looking for entertainment, excitement, or unforgettable experiences, 
+          Geticket has you covered
+        </p>
         
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-instagram"></i>
-          </a>
-     </div>    
-    </div>  
+        <div class="socialMedia">
+          
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-twitter"></i>
+              </a>
+              
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+          </div>    
+          </div>  
 
- </div>
+      </div>
   
-   
+</div>  
 
 
 
