@@ -33,7 +33,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: clamp(10px, 2vw, 20px);
+  padding: clamp(15px, 2vw, 20px);
   background-color: #F4F5F6;
   color: #BA4C9B;
   width: 100%;
@@ -46,58 +46,80 @@ body {
 
 /* Logo styling */
 .logo {
-  font-size: clamp(0.7rem, 2vw, 2rem);
+  font-size: clamp(1rem, 2vw, 2rem);
   font-weight: bold;
   flex: 1;
-  margin-right: 5%;
+  margin-right: 3%;
 }
 
 /* Search container: contains both the search bar and button */
+/* Search container to hold both the search bar and the search button */
 .search-container {
   display: flex;
-  flex: 2;
+  justify-content: center;
   align-items: center;
-  
+  width: 100%; /* Full width, can adjust based on parent */
+  max-width: 500px; /* Set a max-width for larger screens */
+  margin: 0 auto; /* Center the container */
+  padding: 2px;
 }
-@media (max-width: 768px) {
-  .bodyy {
-    padding-top: 50px; /* Increase this value for smaller screens if the header size increases */
-  }
-}
- 
 
 /* Search bar styling */
 .search-bar {
-  width: clamp(50px, 35vw, 350px);
-  padding: clamp(5px, 1vw, 10px);
-  font-size: clamp(0.7rem, 1vw, 1rem);
-  border-radius: 20px;
-  border: 1px solid #BA4C9B;
-  background-color: transparent;
-  color: #BA4C9B;
+  width: 100%; /* Full width of the container */
+  padding: 10px 20px; /* Padding inside the input */
+  border-radius: 25px; /* Rounded corners */
+  border: 1px solid #BA4C9B; /* Border color */
+  background-color: transparent; /* Background color */
+  color: #BA4C9B; /* Text color */
+  font-size: 1rem; /* Adjust text size */
+  outline: none; /* Remove default focus outline */
+  transition: border-color 0.3s ease;
+  height: 37px;
+  overflow: hidden;
+  
 }
 
-/* Custom search button next to the search bar */
+/* Change border color on focus */
+.search-bar:focus {
+  border-color: #BA4C9B;
+}
+
+/* Search button styling */
 .search-btn {
-  padding: 0;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
+  background-color: #BA4C9B; /* Background color for the button */
+  border: none; /* No border */
+  padding: 10px 15px; /* Button padding */
+  border-top-right-radius: 25px; /* Match the rounded corners */
+  border-bottom-right-radius: 25px; /* Same as above */
+  cursor: pointer; /* Pointer cursor on hover */
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: clamp(30px, 3vw, 100px); /* Responsive button width */
-  height: clamp(30px, 3vw, 100px); /* Responsive button height */
+  align-items: center;
+  position: relative; /* Position relative to handle the input */
+  right: 45px; /* Overlay button inside the input field */
+  z-index: 1;
+ 
+  transition: background-color 0.3s ease;
+}
 
+/* Darken the button when clicked */
+.search-btn:active {
+  background-color: #9E3A83; /* Darkened version of the original color */
 }
+
+/* Search icon styling */
 .search-icon {
-  color: #BA4C9B;
-  font-size: clamp(0.6rem, 1vw, 1rem);;
+  color: white; /* White icon */
+  font-size: 1rem; /* Icon size */
 }
+
+
+
 /* Categories styling */
 .categories {
   display: flex;
-  gap: clamp(10px, 2vw, 30px);
+  gap: clamp(5px, 2vw, 20px);
   flex: 1;
 }
 
@@ -158,7 +180,7 @@ body {
 }
 .eventsText{
   color: black;
-  margin:5% 0 5% 0;
+  margin:0% 0 5% 0;
   font-size:clamp(0.75rem, 1vw, 1rem);
   padding: 5%;
 }
@@ -266,7 +288,7 @@ body {
      
     }
     .countdownContainer{
-      margin-top: 15%;
+      margin-top: 5%;
       
     }
     .footer{
@@ -310,6 +332,56 @@ body {
     color: #b94999; /* Color on hover (you can change this to your preference) */
 }
 
+/* Mobile menu and icon styles */
+.mobile-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 60px; /* Position below the header */
+  right: 0;
+  background-color: #F4F5F6;
+  padding: 20px;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+  z-index: 1001;
+}
+
+.mobile-menu a {
+  color: #BA4C9B;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Mobile menu icon */
+.mobile-menu-icon {
+  display: none;
+  font-size: clamp(1rem, 2vw, 2rem);
+  color: #BA4C9B;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Show mobile menu for smaller screens */
+@media (max-width: 768px) {
+  .categories {
+    display: none; /* Hide categories on small screens */
+  }
+
+  .mobile-menu-icon {
+    display: block; /* Show menu icon */
+  }
+
+  .mobile-menu.show {
+    display: flex; /* Show mobile menu when activated */
+  }
+  
+  .bodyy {
+    padding-top: 50px; /* Increase this value for smaller screens if the header size increases */
+  }
+ 
+}
+
 
   
     
@@ -331,6 +403,8 @@ body {
       }
     });
   </script>
+
+
 </head>
 <body>
     <header class="header">
@@ -347,6 +421,20 @@ body {
         <a href="#">Shows</a>
         <a href="#">Premieres</a>
       </nav>
+
+              <!-- Mobile Menu Icon for smaller screens -->
+        <button class="mobile-menu-icon">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Hidden dropdown menu for small screens -->
+        <nav class="mobile-menu">
+          <a href="#">Sports</a>
+          <a href="#">Music</a>
+          <a href="#">Shows</a>
+          <a href="#">Premieres</a>
+        </nav>
+        
     </header>
 
     <div class="bodyy">
@@ -468,5 +556,16 @@ body {
 
 
 </div>  
+
+<script >
+  // Get the menu icon and mobile menu elements
+  const menuIcon = document.querySelector('.mobile-menu-icon');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  // Toggle the menu display when the icon is clicked
+  menuIcon.addEventListener('click', () => {
+    mobileMenu.classList.toggle('show'); // Add or remove the 'show' class
+  });
+</script>
   </body>
 </html>
