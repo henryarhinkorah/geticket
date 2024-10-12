@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Booking page</title>
+        <link rel="stylesheet" href="headerStyles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+        <style>
+             * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box; 
+                justify-content: center;
+                align-items: center; 
+                }
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: white;
+                    color: #000000;  
+                    padding: 0;
+                    margin: 0; 
+                }
+                .cardContainer{
+                    width:70%;
+                    background-color:white;
+                   height:50vh;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    position: relative;
+                    z-index: -1;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+                    margin-top: 100px;
+                    padding-bottom: 5%;
+                    }
+                    .cardImg{
+                    width:100%;
+                    height:60%;
+                    background-image:url(https://th.bing.com/th/id/R.4fb253d5bd0d6d8bd9cc5c764e1cc101?rik=y%2fe0tN%2faAiNiyw&pid=ImgRaw&r=0 );
+                    background-size: cover; /* Ensures the image covers the div */
+                    background-position:center;
+                    position: relative;
+                    background-repeat: no-repeat;
+                    z-index: -1;
+                    }
+                    .eventName{
+                    font-size: clamp(1rem, 2.8vw, 1.5rem);
+                    margin: 3% 0 0 5%;
+                    }
+                    .dateLocation{
+                    font-size: clamp(0.6rem, 1vw, 2rem);
+                    font-weight: lighter;
+                    font-style: italic;
+                    margin-left: 5%;
+                    }
+                  
+                    .far.fa-heart{
+                        color: white; /* Change the heart color */
+                        font-size:clamp(0.95rem, 2vw, 2rem); /* Set the icon size */
+                        margin: 10px;
+                        position: absolute;
+                        right: 3%;
+                        top: 10px;
+                        cursor: pointer; 
+                    }
+                        .icon-button:hover {
+                        background-color: #6f1357; /* Darker background on hover */    
+                        }
+                     
+                    .content{
+                        width: 100vw;
+                        height: auto;
+                        padding: 10px;
+                        align-items: center;
+                        justify-content: center;
+                        display: flex;
+                    }
+                    
+                    .eventDetails{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: self-start;  
+                    }
+                    .packageContainer{
+                      border: 1px solid #BA4C9B;
+                      width:30%;
+                      height: 40%;
+                      border-radius: 30px;
+                      align-items: center;
+                      justify-content: center;
+                      display: flex;
+                      flex-direction: column;
+                      padding: 5%;
+                      gap: 10px;
+                    }
+                    .packageName{
+                      font-size: clamp(0.7rem, 1.5vw, 1.5rem); 
+                      color:#BA4C9B;
+                      font-weight: lighter;
+                    }
+                    .price{
+                      font-weight: lighter;
+                      font-size:clamp(1.2rem, 2.2vw, 2.2rem);
+                    }
+                    .packageDetails{
+                        font-weight: lighter;
+                        font-size:clamp(0.6rem, 1vw, 1.6rem);
+                    }
+                    .packageFlex{
+                      flex-direction: row;
+                      display: flex;
+                      gap: 10%;
+                      margin-top: 10%;
+                    }
+                    .lastPackageFlex{
+                      width: 100%;
+                      align-items: center;
+                      justify-content: center;
+                      display: flex;
+                      margin-top: 2%;
+                    }
+                    .ticketNoContainer{
+                      width: 100%;
+                      padding: 5%;
+                    }
+                    span{
+                      color: #BA4C9B;
+                      font-size: clamp(2rem, 1.5vw, 3rem); 
+                      font-weight: bold;
+                    }
+                    .txt{
+                      font-weight: lighter;
+                      font-size: clamp(1.5rem, 1.5vw, 2.5rem); 
+                    }
+                    .payButton{
+                      background-color:#BA4C9B;
+                      width:70%;
+                      height:10px;
+                      border: none; 
+                      border-radius: 50px;
+                      padding: 3%;
+                     align-items: center;
+                     justify-content: center;
+                     display: flex;
+                      color: white;
+                      cursor: pointer; 
+                      transition: background-color 0.3s ease;
+                      font-size: clamp(1.4rem, 2vw, 2rem);
+                    }
+                    .button{
+                      width: 100%;
+                      align-items: center;
+                      justify-content: center;
+                      display: flex;
+                      margin-bottom: 10%;
+                    }
+
+                    
+
+
+        </style>
+    </head>
+
+  <body>
+    <div class="mainContainer">
+        <header class="header">
+            <div class="logo">Geticket</div>
+            <div class="search-container">
+              <input type="text" class="search-bar" placeholder="Search tickets...">
+              <button class="search-btn">
+                <i class="fas fa-search search-icon"></i>
+              </button>
+            </div>
+            <nav class="categories">
+              <a href="#">Sports</a>
+              <a href="#">Music</a>
+              <a href="#">Shows</a>
+              <a href="#">Premieres</a>
+            </nav>
+      
+                    <!-- Mobile Menu Icon for smaller screens -->
+              <button class="mobile-menu-icon">
+                <i class="fas fa-bars"></i>
+              </button>
+      
+              <!-- Hidden dropdown menu for small screens -->
+              <nav class="mobile-menu">
+                <a href="#">Sports</a>
+                <a href="#">Music</a>
+                <a href="#">Shows</a>
+                <a href="#">Premieres</a>
+              </nav>
+              
+          </header>
+
+     <div class="content">
+        <div class="cardContainer">
+            <i class="far fa-heart"></i>
+            <div class="cardImg"> </div>       
+          <div class="eventDetails">
+            <h1 class="eventName">Tidal Rave</h1>
+            <h4 class="dateLocation">Date: 25th September, 2024</h4>
+            <h4 class="dateLocation">Location: Labadi beach, Accra</h4>
+            <h4 class="dateLocation">Starts from Ghc 250</h4>
+            <h4 class="dateLocation">Time: 7pm - 6am</h4>
+            <h4 class="dateLocation">Guest Artistes: Darko Vibes, King Promise, Sarkodie, Olive the boy</h4>
+          </div>       
+        </div>
+      </div>
+      <div class="packageFlex">
+        <div class="packageContainer">
+          <i class="fas fa-wine-glass" style="font-size: clamp(1.5rem, 2vw, 2rem); color:#BA4C9B;"></i>
+          <h5 class="packageName">Standard</h5>
+          <h5 class="price">Ghc 250.00</h5>
+          <h5 class="packageDetails">1 Ticket & 1 complimentary drink of your choice</h5>
+        </div>
+
+        <div class="packageContainer">
+          <i class="bi bi-balloon" style="font-size: clamp(1.5rem, 2vw, 2rem); color:#BA4C9B;"></i>
+          <h5 class="packageName">Premium</h5>
+          <h5 class="price">Ghc 550.00</h5>
+          <h5 class="packageDetails">2 Tickets & 2 complimentary drinks of your choice</h5>
+        </div>  
+    </div>
+
+    <div class ="lastPackageFlex">
+      <div class="packageContainer" style = "width:70%; border-radius: 30px;">
+        <i class="material-icons" style="font-size: clamp(1.5rem, 2vw, 2rem); color: #BA4C9B;">celebration</i>
+        <h5 class="packageName">VIP</h5>
+        <h5 class="price">Ghc 1000.00</h5>
+        <h5 class="packageDetails">4 Tickets, 1 Belaire & 5 Bottled water </h5>
+      </div>
+  </div>
+
+  <div class="ticketNoContainer">
+    <h5 class ="txt">Number of tickets</h5>
+    <h5 class ="txt">You'll pay: <span>Ghc 2000</span></h5>
+  </div>
+
+  <div class="button">
+    <button class ="payButton">Pay Ghc 2000.00</button>
+  </div>
+</div>
+          <script>
+            // Get the menu icon and mobile menu elements
+            const menuIcon = document.querySelector('.mobile-menu-icon');
+            const mobileMenu = document.querySelector('.mobile-menu');
+          
+            // Toggle the menu display when the icon is clicked
+            menuIcon.addEventListener('click', () => {
+              mobileMenu.classList.toggle('show'); // Add or remove the 'show' class
+            });
+          </script>
+ 
+</body>
+</html>
