@@ -68,7 +68,6 @@
     position: relative; /* Position relative to handle the input */
     right: 45px; /* Overlay button inside the input field */
     z-index: 1;
-   
     transition: background-color 0.3s ease;
   }
   
@@ -99,7 +98,7 @@
     font-size: clamp(0.6rem, 1vw, 1rem);
   }
   .categories a::after{
-    content: ' ';
+              content: ' ';
               height: 3px;
               width: 0;
               position: absolute;
@@ -111,6 +110,11 @@
   .categories a:hover::after {
     width:100%;
   }
+  .categories a.active::after {
+    width: 100%; /* Full-width underline for active link */
+  }
+
+  
   /* Mobile menu and icon styles */
 .mobile-menu {
     display: none; /* Hidden by default */

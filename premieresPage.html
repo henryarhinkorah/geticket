@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Premiere page</title>
+        <link rel="stylesheet" href="headerStyles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="cardStyles.css">
+        <script src="./activeUnderlineScript.js" defer></script>
+
+        <style>
+             * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box; 
+                justify-content: center;
+                align-items: center; 
+                }
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: white;
+                    color: #000000;  
+                    padding: 0;
+                    margin: 0; 
+                }
+                .mainContainer{
+
+                }
+                .heading{
+                    margin-top: 50px;
+                }
+                .header {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: clamp(15px, 2vw, 20px);
+                    background-color: #F4F5F6;
+                    color: #BA4C9B;
+                    width: 100%;
+                    position: absolute;
+                    transition: background-color 0.3s ease; /* Smooth transition */
+                    z-index: 1000; /* Ensure the header stays on top */
+                    background-color: rgba(244, 245, 246, 1); /* Solid at the beginning */
+                    
+                }
+                .eventsContainer{
+                    color: black;
+                    font-size:clamp(0.75rem, 1vw, 1rem);
+                    padding: 5%;
+                }
+                .cardContainer{
+                    width:100%;
+                    background-color:white;
+                    height: 400px;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    position: relative;
+                    z-index: -1;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+                    margin-bottom: 0%; 
+                }
+                .cardImg{
+                    width:inherit;
+                    height:60%
+                }
+                .eventName{
+                    font-size: clamp(1rem, 2.8vw, 1.5rem);
+                    margin: 4% 0 0 5%;
+                }
+                .dateLocation{
+                    font-size: clamp(0.6rem, 1vw, 2rem);
+                    font-weight: lighter;
+                    font-style: italic;
+                    margin-left: 5%;
+                }
+                .getTicketButton{
+                    background-color:#BA4C9B;
+                    width:90%;
+                    height:10%;
+                    border: none; 
+                    border-radius: 30px;
+                    padding: 3%;
+                    margin: 5% 5% 0 5%;
+                    color: white;
+                    cursor: pointer; 
+                    transition: background-color 0.3s ease;
+                    font-size: clamp(0.85rem, 2vw, 1rem);
+                }
+                .getTicketButton:hover {
+                    background-color: #792362; /* Darker background color on hover */
+                }
+                .far.fa-heart{
+                    color: white; /* Change the heart color */
+                        font-size:clamp(0.95rem, 2vw, 2rem); /* Set the icon size */
+                        margin: 10px;
+                        position: absolute;
+                        right: 3%;
+                        top: 10px;
+                        cursor: pointer; 
+                }
+                
+                
+                    .icon-button:hover {
+                        background-color: #6f1357; /* Darker background on hover */
+                        
+                    }
+                    .card-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+                        margin: 3% 0% 0% 0%; 
+                        gap: 20px;
+                        
+                    
+                    }
+   
+        </style>
+    </head>
+    <body>
+        <div class="mainContainer">
+            <header class="header">
+                <div class="logo">Geticket</div>
+                <div class="search-container">
+                  <input type="text" class="search-bar" placeholder="Search tickets...">
+                  <button class="search-btn">
+                    <i class="fas fa-search search-icon"></i>
+                  </button>
+                </div>
+                <nav class="categories">
+                  <a href="homePage.html">Home</a>
+                  <a href="sportsPage.html">Sports</a>
+                  <a href="musicPage.html">Music</a>  
+                  <a href="premieresPage.html">Premieres</a>
+                </nav>
+          
+                        <!-- Mobile Menu Icon for smaller screens -->
+                  <button class="mobile-menu-icon">
+                    <i class="fas fa-bars"></i>
+                  </button>
+          
+                  <!-- Hidden dropdown menu for small screens -->
+                  <nav class="mobile-menu">
+                    <a href="homePage.html">Home</a>
+                    <a href="sportsPage.html">Sports</a>
+                    <a href="musicPage.html">Music</a>
+                    <a href="premieresPage.html">Premieres</a>
+                  </nav>     
+            </header>
+
+            <div class="eventsContainer">
+                <h1 class ="heading">Premieres</h1>
+                <div class="card-grid" id="cardGrid">
+                  <!-- Cards will be dynamically inserted here -->
+                </div>
+            </div>
+      
+            
+      
+              <script defer>
+                
+                // Sample data for events
+                const events = [
+                  {
+                    imageSrc: "https://th.bing.com/th/id/OIP.A1FowVOBOeO9kL-McaLvtAHaLH?rs=1&pid=ImgDetMain",
+                    eventName: "Deadpool Premiere",
+                    dateLocation: "Jan 12 • Silverbird Cinemas",
+                    ticketPrice: "Ghc 200"
+                  },
+                  {
+                    imageSrc: "https://th.bing.com/th/id/OIP.-Hs1r_LPJBpa2yMOsRxx1QHaE7?rs=1&pid=ImgDetMain",
+                    eventName: "Mission Impossible",
+                    dateLocation: "Dec 22 • Silverbird Cinemas",
+                    ticketPrice: "Ghc 200"
+                  },
+                  { 
+                  imageSrc: "https://wallpapercave.com/wp/wp2277917.jpg",
+                    eventName: "Moana 2 Premiere",
+                    dateLocation: "Jan 5 • Silverbird Cinemas",
+                    ticketPrice: "Ghc 550"
+                  },
+                  {
+                  imageSrc: "https://th.bing.com/th/id/OIP.BSZqA_GRx3CbcfOLLJI0ngHaLH?rs=1&pid=ImgDetMain",
+                    eventName: "The Incredibles",
+                    dateLocation: "Jul 3 • Silverbird Cinemas",
+                    ticketPrice: "Ghc 50"
+                  },
+                  
+                  
+                ];
+      
+            function createCard(imageSrc, eventName, dateLocation, ticketPrice) {
+                  return `
+                    <div class="cardContainer">
+                      <i class="far fa-heart"></i>
+                      <img src="${imageSrc} " alt="img" class="cardImg">        
+                    <div class="eventDetails">
+                      <h1 class="eventName">${eventName}</h1>
+                      <h4 class="dateLocation">${dateLocation}</h4>
+                      <h4 class="dateLocation">Starts from ${ticketPrice}</h4>
+                    </div>
+                    <button class="getTicketButton">Get Ticket</button>
+              </div>
+              `;
+                }
+                  // Get the card grid element
+                  const cardGrid = document.getElementById('cardGrid');
+      
+            // Generate cards from events data
+            events.forEach(event => {
+              const cardHTML = createCard(event.imageSrc, event.eventName, event.dateLocation, event.ticketPrice);
+              cardGrid.innerHTML += cardHTML; // Append card HTML to the grid
+            });
+            </script>
+
+        </div> 
+
+        <script>
+            // Get the menu icon and mobile menu elements
+            const menuIcon = document.querySelector('.mobile-menu-icon');
+            const mobileMenu = document.querySelector('.mobile-menu');
+          
+            // Toggle the menu display when the icon is clicked
+            menuIcon.addEventListener('click', () => {
+              mobileMenu.classList.toggle('show'); // Add or remove the 'show' class
+            });
+          </script>
+    </body>
+</html>
