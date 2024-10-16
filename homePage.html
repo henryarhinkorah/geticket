@@ -28,7 +28,7 @@ body {
 }
 
 
-/* Main content */
+
 .content {
   padding: 0px;
   text-align: center;
@@ -39,27 +39,27 @@ body {
   overflow: hidden;
 }
 .backgroundImage{
-  width: 100vw; /* Allow the image to fill the button width */
+  width: 100vw;
   height: 45vw;
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://media.istockphoto.com/id/513550806/photo/teenager-hipster-friends-partying-by-blowing-colorful-confetti-from-hands.webp?s=1024x1024&w=is&k=20&c=iw8A5c4lQ2pWYw_fbDAAnVSDC3SSGDeDPxE_cO0ifgg=);
-  background-size: cover; /* Ensures the image covers the div */
+  background-size: cover; 
   background-position:center;
   position: relative;
   background-repeat: no-repeat;
   z-index: -1;
 }
 .overlayContent h1{
-  font-size: clamp(1rem, 5vw, 3rem); /* Responsive heading size */
+  font-size: clamp(1rem, 5vw, 3rem); 
   margin-bottom: 10px;
 }
 .overlayContent {
-  position: absolute; /* Position it within the parent */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust for the centered positioning */
-  color: white; /* Text color */
-  text-align: center; /* Center text */
-  z-index: 1; /* Ensure it is above the background */
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  color: white; 
+  text-align: center; 
+  z-index: 1; 
 }
 .eventsText{
   color: black;
@@ -75,7 +75,7 @@ body {
   overflow: hidden;
   position: relative;
   z-index: -1;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   margin-bottom: 0%; 
 }
 .cardImg{
@@ -106,28 +106,28 @@ body {
   font-size: clamp(0.85rem, 2vw, 1rem);
 }
 .getTicketButton:hover {
-  background-color: #792362; /* Darker background color on hover */
+  background-color: #792362; 
 }
     .far.fa-heart{
-      color: white; /* Change the heart color */
-      font-size:clamp(0.95rem, 2vw, 2rem); /* Set the icon size */
+      color: white; 
+      font-size:clamp(0.95rem, 2vw, 2rem); 
       margin: 10px;
       position: absolute;
       right: 3%;
       top: 10px;
       cursor: pointer; 
-      transition: transform 0.3s ease; /* Add smooth zoom effect */
+      transition: transform 0.3s ease; 
     }
     .far.fa-heart:hover{
-      transform: scale(1.2); /* Zoom in on hover */
+      transform: scale(1.2);
     }
     .icon-button:hover {
-      background-color: #6f1357; /* Darker background on hover */
+      background-color: #6f1357; 
       
     }
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
       margin: 3% 0% 0% 0%; 
       gap: 20px;
     }
@@ -146,7 +146,7 @@ body {
     }
     .countImg{
       
-      width: 40vw; /* Allow the image to fill the button width */
+      width: 40vw;
       height: 40vw;
       background-image: url(https://th.bing.com/th/id/OIP.2j3xbjgROdhKPIxWGqZo9QHaKe?rs=1&pid=ImgDetMain);
       background-size: cover; /* Ensures the image covers the div */
@@ -200,29 +200,29 @@ body {
     }
 
     .social-icons {
-    display: flex; /* Align icons in a row */
-    gap: 15%; /* Space between icons */
+    display: flex;
+    gap: 15%; 
 }
 
 .social-icons i {
-  font-size:clamp(1.5rem, 2vw, 2.2rem) ; /* Size of the icons */
-    color: black; /* Default color */
-    transition: color 0.3s; /* Transition effect */
+  font-size:clamp(1.5rem, 2vw, 2.2rem) ; 
+    color: black; 
+    transition: color 0.3s;
 }
 
 .social-icons a:hover i {
-    color: #b94999; /* Color on hover (you can change this to your preference) */
+    color: #b94999; 
 }
 
 
   </style>
   <script>
-    // Listen for scroll events on the window
+    // Listens for scroll events on the window
     window.addEventListener('scroll', function() {
-      // Get the header element
+      // Gets the header element
       const header = document.querySelector('.header');
   
-      // Check if the user has scrolled more than 50px
+      // Checks if the user has scrolled more than 50px
       if (window.scrollY > 50) {
         header.style.backgroundColor = 'rgba(244, 245, 246, 0.8)'; // Transparent background
       } else {
@@ -326,13 +326,13 @@ body {
         </div>
         `;
           }
-            // Get the card grid element
-            const cardGrid = document.getElementById('cardGrid');
+      // Gets the card grid element
+        const cardGrid = document.getElementById('cardGrid');
 
-      // Generate cards from events data
+      // Generates cards from events data
       events.forEach(event => {
         const cardHTML = createCard(event.imageSrc, event.eventName, event.dateLocation, event.ticketPrice);
-        cardGrid.innerHTML += cardHTML; // Append card HTML to the grid
+        cardGrid.innerHTML += cardHTML; // Appends card HTML to the grid
       });      
       </script>
           
@@ -381,11 +381,11 @@ body {
 </div>  
 
 <script >
-  // Get the menu icon and mobile menu elements
+  // Gets the menu icon and mobile menu elements
   const menuIcon = document.querySelector('.mobile-menu-icon');
   const mobileMenu = document.querySelector('.mobile-menu');
 
-  // Toggle the menu display when the icon is clicked
+  // Toggles the menu display when the icon is clicked
   menuIcon.addEventListener('click', () => {
     mobileMenu.classList.toggle('show'); // Add or remove the 'show' class
   });

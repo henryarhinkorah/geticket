@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ticketing Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMzYoGhV8ZZZPih6/EEH5DVR+0gXc8/0O2kPZs" crossorigin="anonymous">
+        <style>
+              html, body {      
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100%;
+            overflow:visible;
+             font-family: sans-serif;
+             font-size: clamp(1rem, 1.5vw,2rem); /*reduces fontsize while screen gets smaller*/
+        }
+        .backImage{
+            width:100%;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+            background-size:cover;
+            background-position: center;
+            align-items: center;
+            justify-content: center;
+            position: relative;  
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .logo{
+            color: white;
+            position: absolute;
+            font-weight: lighter; 
+            top: 2%;     
+            left: 2%;
+        }
+        .loginTxt{
+            color: white;
+          
+        }
+        .content{
+            flex-direction: column;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            box-sizing: border-box;
+           
+            
+        }
+        .usernameBar {
+            min-width: 40%; /* Full width of the container */
+            padding: 10px 20px; /* Padding inside the input */
+            border-radius: 25px; /* Rounded corners */
+            border: 1px solid white; /* Border color */
+            background-color: transparent; /* Background color */
+            color: white; /* Text color */
+            outline: none; /* Remove default focus outline */
+            transition: border-color 0.3s ease;
+            height: 15px;
+            overflow: hidden;
+            max-width: 300px;
+        }
+        .passBar{
+            min-width: 40%; /* Full width of the container */
+            padding: 10px 20px; /* Padding inside the input */
+            border-radius: 25px; /* Rounded corners */
+            border: 1px solid white; /* Border color */
+            background-color: transparent; /* Background color */
+            color: white; /* Text color */
+            outline: none; /* Remove default focus outline */
+            transition: border-color 0.3s ease;
+            height: 15px;
+            overflow: hidden;
+            margin-top:30px;
+            max-width: 300px;
+            height: 15px;
+            
+        }
+        button{
+           width: 20vw;
+            padding: 8px ;
+            text-align: center;
+            border-radius: 25px;
+            font-weight: bold;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+            border-color:#e384c8 ;
+            position: relative;
+            overflow: hidden;
+            border-width: 1.5px;
+            margin-top: 5%;
+        }
+        span{
+            background: #BA4C9B;
+            height: 100%;
+            width: 0;
+            border-radius: 25px ;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index:1;
+            transition: 0.5s;
+        }
+
+        button:hover span{
+            width:100% ;
+        }
+        button:hover{
+            border:none ;
+        }
+        button::before {
+            content: "Login";
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+        .forgotTxt{
+            color: white;
+            text-decoration: underline;
+            font-weight: 100;
+            cursor: pointer;
+        }
+        .signupTxt{
+            color: white;
+            text-decoration: underline;
+            font-weight: 100;
+            bottom: 0px;
+            position:absolute;
+            cursor: pointer;
+        }
+            
+
+        </style>
+    </head>
+    <body>
+
+        <div class="backImage">
+            <div class="content">
+                <h2 class="logo">Geticket</h2>
+                <h1 class="loginTxt">Login</h1>
+                <input type="text" class="usernameBar" placeholder="Username">
+                <input type="text" class="passBar" placeholder="Password">
+                <button type = "button" onclick="navigateToPage()"><span> </span></button>
+                <h6 class="forgotTxt">Forgot password?</h6>
+                <h6 class="signupTxt">Sign up</h6>
+            </div>
+        </div>
+
+        <script>
+            function navigateToPage(){
+                window.location.href = "homePage.html"
+            }
+        </script>
+    </body>
+</html>
