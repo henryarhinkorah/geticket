@@ -108,17 +108,19 @@ body {
 .getTicketButton:hover {
   background-color: #792362; /* Darker background color on hover */
 }
-.far.fa-heart{
-  color: white; /* Change the heart color */
+    .far.fa-heart{
+      color: white; /* Change the heart color */
       font-size:clamp(0.95rem, 2vw, 2rem); /* Set the icon size */
       margin: 10px;
       position: absolute;
       right: 3%;
       top: 10px;
       cursor: pointer; 
-}
-
-
+      transition: transform 0.3s ease; /* Add smooth zoom effect */
+    }
+    .far.fa-heart:hover{
+      transform: scale(1.2); /* Zoom in on hover */
+    }
     .icon-button:hover {
       background-color: #6f1357; /* Darker background on hover */
       
@@ -275,10 +277,7 @@ body {
           </div>
         </div>
 
-      
-
-        <script defer>
-          
+        <script defer>   
           // Sample data for events
           const events = [
             {
@@ -334,7 +333,7 @@ body {
       events.forEach(event => {
         const cardHTML = createCard(event.imageSrc, event.eventName, event.dateLocation, event.ticketPrice);
         cardGrid.innerHTML += cardHTML; // Append card HTML to the grid
-      });
+      });      
       </script>
           
       <div class="countdownContainer">
