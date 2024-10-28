@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    justify-content: center;
+    align-items: center; 
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+        color: #000000;  
+        padding: 0;
+        margin: 0; 
+    }
+    .cardContainer{
+        width:70%;
+        background-color:white;
+       height:50vh;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        z-index: -1;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+        margin-top: 100px;
+        padding-bottom: 5%;
+        }
+        .cardImg{
+        width:100%;
+        height:60%;
+        background-image:url(https://th.bing.com/th/id/R.4fb253d5bd0d6d8bd9cc5c764e1cc101?rik=y%2fe0tN%2faAiNiyw&pid=ImgRaw&r=0 );
+        background-size: cover; /* Ensures the image covers the div */
+        background-position:center;
+        position: relative;
+        background-repeat: no-repeat;
+        z-index: -1;
+        }
+        .eventName{
+        font-size: clamp(1rem, 2.8vw, 1.5rem);
+        margin: 3% 0 0 5%;
+        }
+        .dateLocation{
+        font-size: clamp(0.6rem, 1vw, 2rem);
+        font-weight: lighter;
+        font-style: italic;
+        margin-left: 5%;
+        }
+      
+        .far.fa-heart{
+            color: white; /* Change the heart color */
+            font-size:clamp(0.95rem, 2vw, 2rem); /* Set the icon size */
+            margin: 10px;
+            position: absolute;
+            right: 3%;
+            top: 10px;
+            cursor: pointer; 
+        }
+            .icon-button:hover {
+            background-color: #6f1357; /* Darker background on hover */    
+            }
+         
+        .content{
+            width: 100vw;
+            height: auto;
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+        
+        .eventDetails{
+            display: flex;
+            flex-direction: column;
+            align-items: self-start;  
+            margin: 2%;
+        }
+        .packageContainer{
+          border: 1px solid #BA4C9B;
+          width:70%;
+          height: 40%;
+          border-radius: 30px;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          flex-direction: column;
+          padding: 5%;
+          gap: 10px;
+        }
+        .packageName{
+          font-size: clamp(0.7rem, 1.5vw, 1.5rem); 
+          color:#BA4C9B;
+          font-weight: lighter;
+        }
+        .price{
+          font-weight: lighter;
+          font-size:clamp(1.2rem, 2.2vw, 2.2rem);
+        }
+        .packageDetails{
+            font-weight: lighter;
+            font-size:clamp(0.6rem, 1vw, 1.6rem);
+        }
+        .packageFlex{
+          flex-direction: column;
+          display: flex;
+          gap: 10px;
+          margin-top: 10%;
+        }
+     
+        .ticketNoContainer{
+          width: 100%;
+          padding: 5%;
+        }
+        span{
+          color: #BA4C9B;
+          font-size: clamp(1.5rem, 1.5vw, 3rem); 
+          font-weight: bold;
+        }
+        .txt{
+          font-weight: lighter;
+          font-size: clamp(1rem, 1.5vw, 2.5rem); 
+        }
+        .payButton{
+          background-color:#BA4C9B;
+          width:70%;
+          height:10px;
+          border: none; 
+          border-radius: 50px;
+          padding: 5%;
+         align-items: center;
+         justify-content: center;
+         display: flex;
+          color: white;
+          cursor: pointer; 
+          transition: background-color 0.3s ease;
+          font-size: clamp(1rem, 2vw, 2rem);
+        }
+        .button{
+          width: 100%;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          margin-bottom: 10%;
+        }

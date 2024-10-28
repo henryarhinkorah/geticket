@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    justify-content: center;
+    align-items: center; 
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #000000;  
+    padding: 0;
+    margin: 0; 
+  }
+  
+  
+  
+  .content {
+    padding: 0px;
+    text-align: center;
+  
+  }
+  .bodyy{
+    width: 100vw; 
+    overflow: hidden;
+  }
+  .backgroundImage{
+    width: 100vw;
+    height: 45vw;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://media.istockphoto.com/id/513550806/photo/teenager-hipster-friends-partying-by-blowing-colorful-confetti-from-hands.webp?s=1024x1024&w=is&k=20&c=iw8A5c4lQ2pWYw_fbDAAnVSDC3SSGDeDPxE_cO0ifgg=);
+    background-size: cover; 
+    background-position:center;
+    position: relative;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  .overlayContent h1{
+    font-size: clamp(1rem, 5vw, 3rem); 
+    margin-bottom: 10px;
+  }
+  .overlayContent {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    text-align: center; 
+    z-index: 1; 
+  }
+  .eventsText{
+    color: black;
+    margin:0% 0 5% 0;
+    font-size:clamp(0.75rem, 1vw, 1rem);
+    padding: 5%;
+  }
+  .cardContainer{
+    width:100%;
+    background-color:white;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 0%; 
+  }
+  .cardImg{
+    width:inherit;
+    height:60%
+  }
+  .eventName{
+    font-size: clamp(1rem, 2.8vw, 1.5rem);
+    margin: 4% 0 0 5%;
+  }
+  .dateLocation{
+    font-size: clamp(0.6rem, 1vw, 2rem);
+    font-weight: lighter;
+    font-style: italic;
+    margin-left: 5%;
+  }
+  .getTicketButton{
+    background-color:#BA4C9B;
+    width:90%;
+    height:10%;
+    border: none; 
+    border-radius: 30px;
+    padding: 3%;
+    margin: 5% 5% 0 5%;
+    color: white;
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+  }
+  .getTicketButton:hover {
+    background-color: #792362; 
+  }
+      .far.fa-heart{
+        color: white; 
+        font-size:clamp(0.95rem, 2vw, 2rem); 
+        margin: 10px;
+        position: absolute;
+        right: 3%;
+        top: 10px;
+        cursor: pointer; 
+        transition: transform 0.3s ease; 
+      }
+      .far.fa-heart:hover{
+        transform: scale(1.2);
+      }
+      .icon-button:hover {
+        background-color: #6f1357; 
+        
+      }
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+        margin: 3% 0% 0% 0%; 
+        gap: 20px;
+      }
+     
+      .countFlex{
+        flex-direction: row;
+        display: flex;
+        margin-right: 5%;
+        
+      }
+      .heading{
+       left: 5%;
+       top: 0;
+       position: relative;
+       font-size: clamp(1.5rem, 1vw, 1.6rem);
+      }
+      .countImg{
+        
+        width: 40vw;
+        height: 40vw;
+        background-image: url(https://th.bing.com/th/id/OIP.2j3xbjgROdhKPIxWGqZo9QHaKe?rs=1&pid=ImgDetMain);
+        background-size: cover; /* Ensures the image covers the div */
+        background-position:center;
+        margin: 5%;
+        background-repeat: no-repeat;
+        border-radius: 10%;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+       
+      }
+      .countContainer{
+        width:clamp(10%, 50%, 100%);
+        height:clamp(20vh, 70px, 40vh);
+        background-color: #F4F5F6;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        border-radius: 20px;
+        font-size:clamp(0.95rem, 2vw, 2rem) ;
+        font-weight: bold;
+       margin: 0% 0 0 10%;
+       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+       
+      }
+      .countdownContainer{
+        margin-top: 5%;
+        
+      }
+      .footer{
+        width: 100%;
+        height:auto;
+        background-color: #F4F5F6;
+        padding: 5% 5% 2% 5%;
+        
+        
+      }
+      .headings{
+        color: #BA4C9B;  
+        font-size:clamp(0.95rem, 2vw, 2rem); 
+       
+      }
+      .paragraph{
+        margin-top: 1%;
+        font-size:clamp(0.7rem, 1.5vw, 1.8rem);  
+        
+      }
+      .socialMedia{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5% 0 0 0;
+        
+      }
+  
+      .social-icons {
+      display: flex;
+      gap: 15%; 
+  }
+  
+  .social-icons i {
+    font-size:clamp(1.5rem, 2vw, 2.2rem) ; 
+      color: black; 
+      transition: color 0.3s;
+  }
+  
+  .social-icons a:hover i {
+      color: #b94999; 
+  }
+  

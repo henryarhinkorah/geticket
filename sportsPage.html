@@ -7,112 +7,10 @@
         <link rel="stylesheet" href="headerStyles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="cardStyles.css">
+        <link rel="stylesheet" href="sportsStyles.css"> 
         <script src="./activeUnderlineScript.js" defer></script>
-
-        <style>
-             * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box; 
-                justify-content: center;
-                align-items: center; 
-                }
-                body {
-                    font-family: Arial, sans-serif;
-                    background-color: white;
-                    color: #000000;  
-                    padding: 0;
-                    margin: 0; 
-                }
-              
-                .heading{
-                    margin-top: 50px;
-                }
-                .header {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding: clamp(15px, 2vw, 20px);
-                    background-color: #F4F5F6;
-                    color: #BA4C9B;
-                    width: 100%;
-                    position: absolute;
-                    transition: background-color 0.3s ease; 
-                    z-index: 1000;
-                    background-color: rgba(244, 245, 246, 1); 
-                    
-                }
-                .eventsContainer{
-                    color: black;
-                    font-size:clamp(0.75rem, 1vw, 1rem);
-                    padding: 5%;
-                }
-                .cardContainer{
-                    width:100%;
-                    background-color:white;
-                    height: 400px;
-                    border-radius: 20px;
-                    overflow: hidden;
-                    position: relative;
-                    z-index: -1;
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
-                    margin-bottom: 0%; 
-                }
-                .cardImg{
-                    width:inherit;
-                    height:60%
-                }
-                .eventName{
-                    font-size: clamp(1rem, 2.8vw, 1.5rem);
-                    margin: 4% 0 0 5%;
-                }
-                .dateLocation{
-                    font-size: clamp(0.6rem, 1vw, 2rem);
-                    font-weight: lighter;
-                    font-style: italic;
-                    margin-left: 5%;
-                }
-                .getTicketButton{
-                    background-color:#BA4C9B;
-                    width:90%;
-                    height:10%;
-                    border: none; 
-                    border-radius: 30px;
-                    padding: 3%;
-                    margin: 5% 5% 0 5%;
-                    color: white;
-                    cursor: pointer; 
-                    transition: background-color 0.3s ease;
-                    font-size: clamp(0.85rem, 2vw, 1rem);
-                }
-                .getTicketButton:hover {
-                    background-color: #792362; 
-                }
-                .far.fa-heart{
-                    color: white;
-                        font-size:clamp(0.95rem, 2vw, 2rem); 
-                        margin: 10px;
-                        position: absolute;
-                        right: 3%;
-                        top: 10px;
-                        cursor: pointer; 
-                }
-                
-                
-                    .icon-button:hover {
-                        background-color: #6f1357;
-                        
-                    }
-                    .card-grid {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                        margin: 3% 0% 0% 0%; 
-                        gap: 20px;
-                        
-                    
-                    }
-   
-        </style>
+        <script src="./headerScrollScript.js" defer></script>
+        <script src ="./scripts/toggleMenuScript.js" defer></script>
     </head>
     <body>
         <div class="mainContainer">
@@ -132,16 +30,18 @@
                 </nav>
           
                         <!-- Mobile Menu Icon for smaller screens -->
-                  <button class="mobile-menu-icon">
+                        <button id= "mobile-menu-icon" class ="mobile-menu-icon">
                     <i class="fas fa-bars"></i>
                   </button>
           
                   <!-- Hidden dropdown menu for small screens -->
-                  <nav class="mobile-menu">
-                    <a href="homePage.html">Home</a>
-                    <a href="sportsPage.html">Sports</a>
-                    <a href="musicPage.html">Music</a>
-                    <a href="premieresPage.html">Premieres</a>
+                  <nav id="mobile-menu" class="mobile-menu">
+                    <div class="mobileContainer"> 
+                      <a href="homePage.html">Home</a>
+                      <a href="sportsPage.html">Sports</a>
+                      <a href="musicPage.html">Music</a>
+                      <a href="premieresPage.html">Premieres</a>
+                    </div>
                   </nav>     
             </header>
 
@@ -212,15 +112,6 @@
 
         </div> 
 
-        <script>
-            // Get the menu icon and mobile menu elements
-            const menuIcon = document.querySelector('.mobile-menu-icon');
-            const mobileMenu = document.querySelector('.mobile-menu');
-          
-            // Toggle the menu display when the icon is clicked
-            menuIcon.addEventListener('click', () => {
-              mobileMenu.classList.toggle('show'); // Add or remove the 'show' class
-            });
-          </script>
+      
     </body>
 </html>

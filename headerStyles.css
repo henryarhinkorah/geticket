@@ -7,7 +7,7 @@
     color: #BA4C9B;
     width: 100%;
     position: fixed;
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease, backdrop-filter 0.3 ease;; /* Smooth transition */
     z-index: 1000; /* Ensure the header stays on top */
     background-color: rgba(244, 245, 246, 1); /* Solid at the beginning */
     
@@ -99,13 +99,14 @@
   }
   .categories a::after{
               content: ' ';
-              height: 3px;
+              height: 2px;
               width: 0;
               position: absolute;
               background: #BA4C9B;
               left: 0;
               bottom: -5px;
               transition: 0.5s;
+              border-radius: 9px;
   }
   .categories a:hover::after {
     width:100%;
@@ -116,23 +117,36 @@
 
   
   /* Mobile menu and icon styles */
-.mobile-menu {
-    display: none; /* Hidden by default */
-    position: absolute;
-    top: 60px; /* Position below the header */
+  .mobile-menu {
+     
+    position: fixed;
+    top: 0;
     right: 0;
-    background-color: #F4F5F6;
-    padding: 20px;
+    height: 100vh;
+    width: 40%; 
+    background-color: rgba(222, 225, 227, 0.8);
+    padding: 20px 15px 0 15px;
     flex-direction: column;
-    gap: 10px;
-    border-radius: 10px;
+    font-weight: bold;
+    gap: 20px;
+    border-radius: 10px 0 0 10px;
     z-index: 1001;
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform 0.3s ease; /* Smooth slide-in effect */
+    align-items: flex-start;
+    justify-content: flex-start; 
+    backdrop-filter: blur(10px); 
+  
+}
+  .mobile-menu.show{
+    transform: translateX(0);
   }
   
   .mobile-menu a {
-    color: #BA4C9B;
+    color:#BA4C9B;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1rem;     
+   
   }
   
   /* Mobile menu icon */
@@ -143,6 +157,15 @@
     background: none;
     border: none;
     cursor: pointer;
+    z-index: 1002;
+  }
+  .mobileContainer{
+    margin-top: 20%;
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    gap: 20px; 
   }
   
   /* Show mobile menu for smaller screens */
@@ -155,9 +178,7 @@
       display: block; /* Show menu icon */
     }
   
-    .mobile-menu.show {
-      display: flex; /* Show mobile menu when activated */
-    }
+    
     
     .bodyy {
       padding-top: 50px; /* Increase this value for smaller screens if the header size increases */
