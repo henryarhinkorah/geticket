@@ -123,19 +123,18 @@
     top: 0;
     right: 0;
     height: 100vh;
-    width: 40%; 
+    width: 70%; 
     background-color: rgba(222, 225, 227, 0.8);
     padding: 20px 15px 0 15px;
     flex-direction: column;
     font-weight: bold;
     gap: 20px;
-    border-radius: 10px 0 0 10px;
     z-index: 1001;
     transform: translateX(100%); /* Start off-screen */
     transition: transform 0.3s ease; /* Smooth slide-in effect */
     align-items: flex-start;
     justify-content: flex-start; 
-    backdrop-filter: blur(10px); 
+    backdrop-filter: blur(5px); 
   
 }
   .mobile-menu.show{
